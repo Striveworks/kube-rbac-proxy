@@ -1,3 +1,12 @@
-FROM docker.io/bitnami/kube-rbac-proxy:0.18.2
+ARG GOARCH=amd64
+ARG BASEIMAGE=gcr.io/distroless/static:nonroot-$GOARCH
+FROM $BASEIMAGE
 
-COPY _output/kube-rbac-proxy /kube-rbac-proxy
+ARG GOARCH=amd64
+ARG GOOS=linux
+ARG BINARY=kube-rbac-proxy-$GOOS-$GOARCH
+COPY _output/$BINARY /usr/local/bin/kube-rbac-proxy
+EXPOSE 8080
+USER 1001
+
+ENTRYPOINT ["/usr/local/bin/kube-rbac-proxy"]
