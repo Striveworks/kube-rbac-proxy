@@ -1,8 +1,6 @@
 module github.com/brancz/kube-rbac-proxy
 
-go 1.23.6
-
-toolchain go1.23.7
+go 1.23.8
 
 require (
 	github.com/ghodss/yaml v1.0.0
@@ -10,7 +8,7 @@ require (
 	github.com/oklog/run v1.1.0
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/pflag v1.0.5
-	golang.org/x/net v0.37.0
+	golang.org/x/net v0.38.0
 	gopkg.in/yaml.v2 v2.4.0
 	k8s.io/api v0.32.3
 	k8s.io/apimachinery v0.32.3
